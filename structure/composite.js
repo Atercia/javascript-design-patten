@@ -26,6 +26,7 @@ class Thing {
     return this.size
   }
 }
+
 let boxA = new Box()
 let boxB1 = new Box()
 let boxB2 = new Box()
