@@ -28,3 +28,11 @@
 // obj.funcA()
 // obj.funcB()
 // obj.funcC()
+let ab = {
+  1: 321,
+  2: [342, 32, 32],
+  3: 432,
+}
+for (let val of Object.values(ab)) {
+  console.info(val)
+}
