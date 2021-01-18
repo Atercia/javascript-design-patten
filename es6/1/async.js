@@ -8,6 +8,7 @@ function a1() {
 function a2() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
+      // reject("a2 result , use time 0.5")
       resolve("a2 result , use time 0.5")
     }, 500)
   })
@@ -28,12 +29,17 @@ async function todo() {
   const v1 = await a1()
   console.info("finish a1")
   const v2 = await a2()
+  throw new Error("test")
   console.info("finish a2")
   return { v1, v2 }
 }
 
-todo().then((res) => {
-  console.info("THEN_VALUE:", res)
-})
+todo()
+  .then((res) => {
+    console.info("THEN_VALUE:", res)
+  })
+  .catch((e) => {
+    console.info("CATCH_ERR:", e)
+  })
 
 // https://juejin.cn/post/6844904022223110151#heading-30
