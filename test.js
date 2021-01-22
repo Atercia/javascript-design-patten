@@ -1,20 +1,24 @@
-let time = 3420
-console.time()
-const t1 = {
-  10: true,
-  60: !(time % 60),
-  180: !(time % 180),
-  280: !(time % 280),
+const debounce = function (fn, wait) {
+  let timeout = null
+  return function () {
+    if (timeout !== null) console.log(clearTimeout(timeout)) // 如果多次触发将上次记录延迟清除掉
+    timeout = setTimeout(() => {
+      // console.info("TODO", arguments)
+      fn.apply(this, arguments)
+      // 或者直接 fn()
+      timeout = null
+    }, wait)
+  }
 }
-console.timeEnd()
-console.time()
-time=3588
-const t2 = {
-  10: true,
-  60: !(time % 60),
-  180: !(time % 180),
-  280: !(time % 280),
-}
-console.timeEnd()
 
-console.info(t1,t2)
+function test(a, b, c) {
+  console.info({ a, b, c })
+}
+let res = debounce(test, 1000, 1, 2, 3)
+
+res(1, 2, 3)
+res(1, 2, 3)
+res(1, 2, 2)
+
+// let t = 123
+// console.log(clearTimeout(t))
