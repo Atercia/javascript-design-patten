@@ -77,3 +77,41 @@ Math.max.apply(this, waitArr) //4
 waitArr.reduce((prev, cur, curIndex, arr) => {
   return Math.max(prev, cur) // 对象的话可以加属性调用
 }, 0) //4
+
+/**
+ * @AIM 合并
+ */
+const arrA = [1, 2],
+  arrB = [3, 4]
+const arr3 = [].concat.apply(arrA, arrB) //arrA值为[1,2,3,4]
+// console.log({ 数组合并: arr3 })
+
+/**
+ * @AIM 删除对象多余属性
+ */
+
+const { name, age, def = "解构默认值", ...obj } = {
+  name: "张三",
+  test: 1,
+  age: 13,
+  dec: "描述1",
+  info: "信息",
+}
+
+// console.log({ 删除对象多余属性: obj, def })
+
+const compact = (arr) => arr.filter(Boolean)
+res = compact([0, -1, false, 2, undefined, null, "", 3, "a", "e" * 23, NaN, "s", 34]) //[ 1, 2, 3, 'a', 's', 34 ]
+// console.log("使用Boolean构造函数过滤假值", res)
+
+const hasVal = (val) => {
+  return val == 0 ? true : Boolean(val)
+}
+
+// console.log("使用Boolean构造函数判断假值", hasVal(0), hasVal(null), hasVal(NaN), hasVal(undefined))
+
+// console.log(
+//   "千分位分割数字",
+//   "1234567890".replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+//   (1234567890).toLocaleString()
+// )
