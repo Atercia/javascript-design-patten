@@ -9,7 +9,7 @@ class Meat {
   }
 }
 
-export function foodFactor(type) {
+function foodFactor(type) {
   switch (type) {
     case "cake":
       return new Cake();

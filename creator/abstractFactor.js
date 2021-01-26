@@ -1,20 +1,20 @@
-class expensiveCake {
+class ExpensiveCake {
   eat() {
     console.log("good cake")
   }
 }
-class expensiveMeat {
+class ExpensiveMeat {
   eat() {
     console.log("good meat")
   }
 }
 
-class cheapCake {
+class CheapCake {
   eat() {
     console.log("cheap cake")
   }
 }
-class cheapMeat {
+class CheapMeat {
   eat() {
     console.log("cheap meat")
   }
@@ -24,25 +24,28 @@ class cheapMeat {
  * @INTRO_抽象工厂
  */
 
-class foodFactor {
+class FoodFactor {
   createCake() {}
   createMeat() {}
 }
 
-class ExpensiveFoodFactor extends foodFactor {
+class ExpensiveFoodFactor extends FoodFactor {
   createCake() {
-    return new expensiveCake()
+    return new ExpensiveCake()
   }
   createMeat() {
-    return new expensiveMeat()
+    return new ExpensiveMeat()
   }
 }
-class CheapFoodFactor extends foodFactor {
+/**
+ * @AIM test
+ */
+class CheapFoodFactor extends FoodFactor {
   createCake() {
-    return new cheapCake()
+    return new CheapCake()
   }
   createMeat() {
-    return new cheapMeat()
+    return new CheapMeat()
   }
 }
 

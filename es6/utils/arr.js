@@ -1,9 +1,8 @@
-
 /**
  * 判断是否是数组
  * @param {Array}} arr 数组
  */
-export const arrJudge = arr => {
+export const arrJudge = (arr) => {
   if (Array.isArray(arr)) {
     return true
   }
@@ -13,7 +12,7 @@ export const arrJudge = arr => {
  * 数组去重
  * @param {Array} arr  数组
  */
-export const arrRemoveRepeat = arr => {
+export const arrRemoveRepeat = (arr) => {
   return Array.from(new Set(arr))
 }
 
@@ -22,7 +21,7 @@ export const arrRemoveRepeat = arr => {
  * @param {Array} arr  数组
  * @param {Boolean} ascendFlag   升序,默认为 true
  */
-export const arrOrderAscend = (arr, ascendFlag=true) => {
+export const arrOrderAscend = (arr, ascendFlag = true) => {
   return arr.sort((a, b) => {
     return ascendFlag ? a - b : b - a
   })
@@ -32,7 +31,7 @@ export const arrOrderAscend = (arr, ascendFlag=true) => {
  * 数组最大值
  * @param {Array} arr  数组
  */
-export const arrMax = arr => {
+export const arrMax = (arr) => {
   return Math.max(...arr)
 }
 
@@ -40,10 +39,10 @@ export const arrMax = arr => {
  * 数组求和
  * @param {Array} arr 数组
  */
-export const arrSum = arr => {
-  return arr.reduce((prev, cur)=> {
+export const arrSum = (arr) => {
+  return arr.reduce((prev, cur) => {
     return prev + cur
-  }, 0)
+  })
 }
 
 /**
@@ -52,7 +51,7 @@ export const arrSum = arr => {
  * @param {String} key 数组对应的 key 值
  */
 export const arrObjSum = (obj, key) => {
-  return arrObj.reduce((prev, cur) => prev + cur.key, 0)
+  return arrObj.reduce((prev, cur) => prev + cur.key)
 }
 
 /**
@@ -69,8 +68,8 @@ export const arrConcat = (arrOne, arrTwo) => {
  * @param {Array} arr 数组
  * @param {}  value 值,目前只支持 String,Number,Boolean
  */
-export const arrIncludeValue = (arr,  value) => {
-  return arr.includes( value)
+export const arrIncludeValue = (arr, value) => {
+  return arr.includes(value)
 }
 
 /**
@@ -79,7 +78,7 @@ export const arrIncludeValue = (arr,  value) => {
  * @param {Array} arrTwo
  */
 export const arrAndSet = (arrOne, arrTwo) => {
-  return arrOne.concat(arrTwo.filter(v => !arrOne.includes(v)))
+  return arrOne.concat(arrTwo.filter((v) => !arrOne.includes(v)))
 }
 
 /**
@@ -88,7 +87,7 @@ export const arrAndSet = (arrOne, arrTwo) => {
  * @param {Array} arrTwo
  */
 export const arrIntersection = (arrOne, arrTwo) => {
-  return arrOne.filter(v => arrTwo.includes(v))
+  return arrOne.filter((v) => arrTwo.includes(v))
 }
 
 /**
@@ -98,7 +97,7 @@ export const arrIntersection = (arrOne, arrTwo) => {
  * eg: [1, 2, 3] [2, 4, 5] 差集为[1,3,4,5]
  */
 export const arrDifference = (arrOne, arrTwo) => {
-  return arrOne.concat(arrTwo).filter(v => !arrOne.includes(v) || !arrTwo.includes(v))
+  return arrOne.concat(arrTwo).filter((v) => !arrOne.includes(v) || !arrTwo.includes(v))
 }
 
 /**
@@ -109,9 +108,9 @@ export const arrDifference = (arrOne, arrTwo) => {
  * @param {twoKey} twoKey
  */
 export const arrTwoToArrObj = (arrOne, arrTwo, oneKey, twoKey) => {
-  if(!oneKey&&!twoKey){
-    return arrOne.map((oneKey, i) => ({ [oneKey]:arrTwo[i] }))
-  }else{
+  if (!oneKey && !twoKey) {
+    return arrOne.map((oneKey, i) => ({ [oneKey]: arrTwo[i] }))
+  } else {
     return arrOne.map((oneKey, i) => ({ oneKey, twoKey: arrTwo[i] }))
   }
 }

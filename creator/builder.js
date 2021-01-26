@@ -7,7 +7,7 @@
 
 将构造过程封装成director
 将过程实现的各个部分封装到builder
-客户端只需要以来director
+客户端只需要依赖director
 */
 /*
 假设有这样一个复杂对象，
