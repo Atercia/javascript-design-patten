@@ -1,0 +1,9 @@
+{
+    "name": "js-patten",
+    "version": "1.0.0",
+    "description": "learn-demo",
+    "productName": "JS设计模式",
+    "capacitorId": "",
+    "author": "atercia <15316878021@163.com>",
+    "private": true
+}
