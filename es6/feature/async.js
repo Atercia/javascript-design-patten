@@ -43,3 +43,23 @@ todo()
   })
 
 // https://juejin.cn/post/6844904022223110151#heading-30
+
+// sleep延时实现————————————————————
+
+// async function doMain() {
+//   console.info("1")
+
+//   await sleep(2000) // 间隔 2 秒钟输出
+
+//   console.info("2")
+// }
+
+// doMain()
+
+// async function sleep(s) {
+//   return new Promise(function (resolve) {
+//     setTimeout(function () {
+//       resolve(1)
+//     }, s)
+//   })
+// }
