@@ -24,12 +24,12 @@ class CheapMeat {
  * @INTRO_抽象工厂
  */
 
-class FoodFactor {
+class FoodFactory {
   createCake() {}
   createMeat() {}
 }
 
-class ExpensiveFoodFactor extends FoodFactor {
+class ExpensiveFoodFactory extends FoodFactory {
   createCake() {
     return new ExpensiveCake()
   }
@@ -40,7 +40,7 @@ class ExpensiveFoodFactor extends FoodFactor {
 /**
  * @AIM test
  */
-class CheapFoodFactor extends FoodFactor {
+class CheapFoodFactory extends FoodFactory {
   createCake() {
     return new CheapCake()
   }
@@ -50,10 +50,10 @@ class CheapFoodFactor extends FoodFactor {
 }
 
 function todo() {
-  let ef = new ExpensiveFoodFactor()
+  let ef = new ExpensiveFoodFactory()
   ef.createCake().eat()
   ef.createMeat().eat()
-  let cf = new CheapFoodFactor()
+  let cf = new CheapFoodFactory()
   cf.createCake().eat()
   cf.createMeat().eat()
 }
